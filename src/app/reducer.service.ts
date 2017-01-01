@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createStore } from 'redux';
 
-import { rootReducer, addTodo, completeTodo, next, previous, goto } from './reducer';
+import { rootReducer, addTodo, completeTodo, next, previous, goto, initState } from './reducer';
 
 @Injectable()
 export class ReducerService {
@@ -29,6 +29,10 @@ export class ReducerService {
 
   goto(step) {
     this.store.dispatch(goto(step));
+  }
+
+  initState(data) {
+    this.store.dispatch(initState(data));
   }
 
   get state() {

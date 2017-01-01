@@ -2,6 +2,11 @@ import * as Immutable from 'immutable';
 
 export function todos(state = { timeline: [[]], current: [], currentId: 0, count: 1 }, action) {
 	switch (action.type) {
+
+		case "INIT_STATE": {
+			return Object.assign({}, action.state);
+		}
+
 		case "ADD_TODO": {
 			// Remove all future states
 			state.timeline = state.timeline.slice(0, state.currentId + 1);
@@ -88,6 +93,13 @@ export function todos(state = { timeline: [[]], current: [], currentId: 0, count
 
 			return Object.assign({}, state);
 		}
+	}
+}
+
+export function initState(state) {
+	return {
+		type: "INIT_STATE",
+		state: state
 	}
 }
 

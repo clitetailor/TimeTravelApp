@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ReducerService } from './reducer.service';
+import { LocalstorageService } from './localstorage.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   todos = [];
   step = 0;
   count = 1;
@@ -17,8 +18,13 @@ export class AppComponent {
         y: this.line.y1
       }];
 
-  constructor(private reducer: ReducerService) {
+  constructor(private reducer: ReducerService,
+              private localStorage: LocalstorageService) {
+
     this.reducer.store.subscribe(() => {
+      console.log(this.reducer.state);
+      this.localStorage.set("todoApp", JSON.stringify(this.reducer.state));
+
       this.todos = this.reducer.state.current;
       this.step = this.reducer.state.currentId;
       this.count = this.reducer.state.count;
@@ -44,5 +50,17 @@ export class AppComponent {
         }
       }
     })
+
+  }
+
+  ngOnInit() {
+    let data = this.localStorage.get("todoApp");
+    let lastState = undefined;
+
+    if (data !== null) {
+      lastState = JSON.parse(data);
+      console.log(lastState);
+      this.reducer.initState(lastState);
+    }
   }
 }

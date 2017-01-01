@@ -6,7 +6,7 @@ import { createStore, combineReducers } from 'redux';
 
 import { AppComponent } from './app.component';
 import { ReducerService } from './reducer.service';
-
+import { LocalstorageService } from './localstorage.service';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { ReducerService } from './reducer.service';
     HttpModule,
   ],
   providers: [
-    ReducerService
+    ReducerService,
+    LocalstorageService
   ],
   bootstrap: [AppComponent]
 })
