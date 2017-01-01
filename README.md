@@ -4,7 +4,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 ## Introduce
 
-This is a time travel todo app that was built with Angular 2 framework and intergrated with redux and localstorage. I don't use ng2-redux because it is not necessary. ImmutableJS has been considered too but it was too complicated to manage app state so it was removed.
+This is an time-travel todo app that was built with Angular 2 framework and integrated with Redux and localStorage. I do not use ng2-Redux since it is not necessary. ImmutableJS was considered too but it was too complicated to manage app state so it was removed.
 
 ## Setup
 
