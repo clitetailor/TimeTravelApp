@@ -1,3 +1,50 @@
-<h1>
-  {{title}}
-</h1>
+<div class="row">
+    <h1>Time Travel</h1>
+</div>
+
+<div class="row row-1">
+
+    <div class="tray">
+            <input type="text" #input
+              class="input text-box"
+              (keydown.enter)="reducer.addTodo(input.value); input.value=''"/>
+
+            <div *ngFor="let todo of todos; let id = index" class="text-box text-box-1">
+                <div class="text-span">{{todo.text}}</div>
+              
+                <div class="check-box" [class.done]="todo.completed" (click)="reducer.completeTodo(id)">
+                  {{todo.completed ? "done" : ""}}
+                </div>
+            </div>
+    </div>
+
+</div>
+
+<div class="row row-2">
+
+    <button class="button" (click)="reducer.previous()">navigate_before</button>
+    <div class="counter">{{step + 1}}/{{count}}</div>
+    <button class="button" (click)="reducer.next()">navigate_next</button>
+
+</div>
+
+<div class="row row-3">
+
+    <svg width="600" height="20" viewBox="0 0 600 20">
+        <line class="line"
+            [attr.x1]="line.x1"
+            [attr.y1]="line.y1"
+            [attr.x2]="line.x2"
+            [attr.y2]="line.y2">
+        </line>
+
+        <circle class="dot"
+            *ngFor="let point of points; let id = index"
+            [class.active]="id === step"
+            [attr.cx]="point.x"
+            [attr.cy]="point.y"
+            (click)="reducer.goto(id)">
+        </circle>
+    </svg>
+
+</div>

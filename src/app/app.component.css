@@ -1,0 +1,157 @@
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+h1 {
+	color: darkorange;
+
+	font-size: 48px;
+	font-family: CAC Champagne;
+}
+
+.row-1 {
+	height: 600px;
+}
+
+.tray {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+input {
+	border: none;
+	outline: none;
+
+	border-bottom: 1px solid #ccc;
+}
+
+.text-box {
+	width: 800px;
+	max-width: 800px;
+	padding: 10px 50px;
+
+	color: #333;
+	font-size: 20px;
+	font-family: Fira Code;
+
+	word-break: break-all;
+	box-sizing: border-box;
+}
+
+.text-box-1 {
+	display: flex;
+	flex-flow: row wrap;
+	
+	font-size: 16px;
+	padding: 12px 54px;
+}
+
+.text-span {
+	display: flex;
+	align-self: center;
+	
+	flex: 1 1 auto;
+}
+
+.check-box {
+	width: 40px;
+	height: 40px;
+
+	flex: 0 0 auto;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	font-family: Material Icons !important;
+	font-size: 20px;
+
+	border: 1px solid #ccc;
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.check-box.done {
+	color: white;
+	border: 1px solid white;
+	background: yellowgreen;
+}
+
+
+.row-2 {
+	height: 108px;
+	align-items: stretch;
+	margin-top: 48px;
+}
+
+
+.counter {
+	display: flex;
+	align-items: center;
+	
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+.button {
+	margin: 20px;
+	width: 64px;
+	height: 64px;
+
+	display: flex;
+	justify-content: center;
+
+	color: #333;
+	font-size: 40px !important;
+	font-family: Material Icons;
+
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	background: white;
+
+	cursor: pointer;
+	outline: none;
+}
+
+
+.button:hover {
+	color: #333;
+	border: 1px solid transparent;
+	background: gold;
+}
+
+.button:active {
+	color: white;
+	border: 1px solid transparent;
+	background: darkorange;
+}
+
+.line {
+	stroke: darkorange;
+	stroke-width: 2px;
+}
+
+.dot {
+	r: 6px;
+	stroke-width: 2px;
+	transition: r 0.1s;
+	
+	stroke: white;
+	fill: darkorange;
+
+	cursor: pointer;
+}
+
+.dot:hover {
+	stroke-width: 3px;
+	r: 8px;
+}
+
+.dot.active {
+	stroke: darkorange;
+	fill: white;
+}
